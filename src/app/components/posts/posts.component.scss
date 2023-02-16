@@ -1,0 +1,63 @@
+@import "../../../assets/_styles/_mixins/flex";
+.info{
+    width: 50%;
+    margin: auto;
+    .userInfo{
+        margin: 30px 0px 10px 5px;
+        font-size: 20px;
+        font-weight: 600;
+        text-align: left;
+    }
+    .posts{ 
+        @include flexbox();
+        @include flex-direction(row);
+        @include justify-content(center);
+        @include align-items(center);
+        color: white;
+        .userPost{
+            background: #3f51b5;  
+            margin: 5px;
+            margin-left: 0px;
+            padding: 0px 15px; 
+            .postTitle{
+                text-align: center;
+            }
+            .postBody{
+                text-align: justify;
+            }
+            .commentsLength{
+                color: #ddd;
+                padding-left: 15px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #fff;
+            }
+            .comments{
+                font-style: italic;
+                color: #ddd;
+                padding-left: 15px;
+            }
+        }
+        .loadComment{
+            font-size: 50px;
+            color: #1976d2;
+            border: none;
+            background: no-repeat;
+            margin-left: 20px;
+            cursor: pointer;
+            width: 1.5rem;
+        }
+        .expanded::after{
+            content: '-';
+        }
+        .collapsed::after{
+            content: '+';
+        }
+    }
+    .loadAll{
+        .primaryBtn{
+            float: right;
+            margin-right: 3rem;
+        }
+    }
+}

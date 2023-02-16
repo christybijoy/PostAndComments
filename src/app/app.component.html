@@ -1,0 +1,17 @@
+<div class="app-content">
+    <header></header>
+    <div class="container">
+        <div class="usersList" *ngIf="isLoaded">
+            <ng-container *ngFor="let user of users; let i = index;">
+                <button class="primaryBtn user-btn"
+                    [ngClass]="clickedUser && (clickedUser.id == user.id) ? 'user_button_selected' : 'user_button'"
+                    (click)="setUser(user)"> {{user.name | shortName}} <span class="sr-only" role="status">Click to
+                        load posts from {{user.name}}</span></button>
+            </ng-container>
+        </div> 
+            <loader *ngIf="!isLoaded"></loader> 
+
+        <posts [clickedUser]="clickedUser"></posts>
+    </div>
+
+</div>

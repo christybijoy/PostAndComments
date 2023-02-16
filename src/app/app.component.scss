@@ -1,0 +1,15 @@
+@import '../assets/_styles/_mixins/flex';
+.container{
+    .usersList{ 
+        @include flexbox();
+        @include flex-direction(row);
+        // @include justify-content(space-between);
+        @include align-items(baseline); 
+    }
+    .user_button{
+        background-color: #3f51b5; 
+    }
+    .user_button_selected{
+        background-color: #ff4081;; 
+    }
+}
